@@ -73,7 +73,7 @@ with weaving_crafting_tab:
 
     df_crafting_info = load_weaving_crafting_data()
     # Filtrar os tipos únicos de df_weaving_materials
-    weaving_types = st.session_state["weaving_materials"]['type'].unique()
+    weaving_types = st.session_state["weaving_materials"].loc[st.session_state["weaving_materials"]['type'] != "Materials"]['type'].unique()
 
     df_weaving_types = {}
     for weaving_type in weaving_types:
