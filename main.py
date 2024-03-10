@@ -10,6 +10,11 @@ st.session_state["qtd_craft"] = 1
 
 
 # Dados fornecidos
+def load_weaving_icons():
+    df = pd.read_csv('weaving_icon_urls.csv')
+    return df
+
+
 def load_weaving_data():
     # Tenta carregar o DataFrame do CSV
     df = pd.read_csv('weaving_materials.csv')
@@ -17,11 +22,6 @@ def load_weaving_data():
     col_order = ["icon", "name", "price", "type"]
     st.session_state["weaving_materials"] = df[col_order]
     return st.session_state["weaving_materials"]
-
-
-def load_weaving_icons():
-    df = pd.read_csv('weaving_icon_urls.csv')
-    return df
 
 
 # Dados fornecidos
