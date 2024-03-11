@@ -55,14 +55,14 @@ with st.sidebar:
                 disabled=True,
             ),
             "type": st.column_config.Column(
-                disabled=True,
+                disabled=False,
             )
         }
-        edit_df = st.data_editor(st.session_state["weaving_materials"],hide_index=True,column_config=weaving_material_column_config)
+        edit_df = st.data_editor(st.session_state["weaving_materials"],hide_index=True,column_config=weaving_material_column_config, use_container_width=True)
         if edit_df is not None:
             # edit_df.to_csv('weaving_materials.csv', index=False)
             st.session_state["weaving_materials"] = edit_df
-        st.button("Save data", on_click=on_click_save_data)
+        st.button("Save data", on_click=on_click_save_data, use_container_width=True)
 
 
 
@@ -86,4 +86,4 @@ with weaving_crafting_tab:
     # Exibindo o resultado
     for weaving_type, df_crafting_filtered in df_weaving_types.items():
         st.subheader(weaving_type)
-        st.data_editor(df_crafting_filtered.sort_values(by='lucro', ascending=False),hide_index=True, key=weaving_type)
+        st.dataframe(df_crafting_filtered.sort_values(by='lucro', ascending=False),hide_index=True)
