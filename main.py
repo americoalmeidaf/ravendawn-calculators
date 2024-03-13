@@ -1,6 +1,6 @@
 import streamlit as st
 import pandas as pd
-import infusion
+import src.infusion_calculator.infusion as infusion
 import src.crafting.weaving_materials as weaving_materials
 import src.crafting.weaving as weaving_craft
 
