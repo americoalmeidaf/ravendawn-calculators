@@ -23,6 +23,7 @@ def run_weaving_materials_table():
         )
     }
 
+    st.caption("Set price material here to update crafting table")
     edit_df = st.data_editor(st.session_state["weaving_materials"],hide_index=True,column_config=weaving_material_column_config, use_container_width=True)
     if edit_df is not None:
         st.session_state["weaving_materials"] = edit_df
