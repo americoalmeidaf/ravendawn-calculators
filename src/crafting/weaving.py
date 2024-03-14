@@ -22,13 +22,13 @@ def load_weaving_crafting_data():
     df['material_2'].map(st.session_state["weaving_materials"].set_index('name')['price']).fillna(0) * df['qty_material_2'].fillna(0) +
     df['material_3'].map(st.session_state["weaving_materials"].set_index('name')['price']).fillna(0) * df['qty_material_3'].fillna(0) +
     df['material_4'].map(st.session_state["weaving_materials"].set_index('name')['price']).fillna(0) * df['qty_material_4'].fillna(0)
-)
-    df['profit'] = (st.session_state["weaving_materials"].set_index('name').loc[df['craft']]['price'].values) *  st.session_state["qty_craft"] - df['cost']
-    df['profit/xp'] = df['profit'] / df['xp']
+).round(0)
+    df['profit'] = ((st.session_state["weaving_materials"].set_index('name').loc[df['craft']]['price'].values) *  st.session_state["qty_craft"] - df['cost']).round(0)
+    df['profit/xp'] = (df['profit'] / df['xp']).round(2)
     df['breakeven'] = df['cost'] /  st.session_state["qty_craft"] * MARKET_TAX_COMPENSATOR
     col_order = ["craft","cost", "profit","profit/xp","breakeven", "xp", "material_1","qty_material_1", "material_2","qty_material_2", "material_3","qty_material_3", "material_4","qty_material_4"]
     st.session_state["df_crafting_info"] = df[col_order]
-    return st.session_state["df_crafting_info"].round(0)
+    return st.session_state["df_crafting_info"]
 
 
 def run_weaving_crafting_table():
