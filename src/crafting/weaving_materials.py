@@ -8,7 +8,7 @@ def load_weaving_data():
     return df
 
 def on_click_save_data():
-    st.session_state["weaving_materials"].to_csv('weaving_materials.csv', index=False)
+    st.session_state["weaving_materials"].to_csv('./data/weaving_materials.csv', index=False)
 
 def run_weaving_materials_table():
 

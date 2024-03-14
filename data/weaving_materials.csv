@@ -1,6 +1,6 @@
 name,price,type
 Apprentice Anvil Armor,10000,Crafting T1
-Apprentice Anvil Boots,3,Crafting T1
+Apprentice Anvil Boots,1000,Crafting T1
 Apprentice Anvil Bracers,4,Crafting T1
 Apprentice Anvil Helmet,1,Crafting T1
 Apprentice Anvil Legs,14500,Crafting T1
@@ -57,3 +57,10 @@ Workshop Assistant Boots,8800,Crafting T1
 Workshop Assistant Gloves,18000,Crafting T1
 Workshop Assistant Helmet,17990,Crafting T1
 Workshop Assistant Legs,9000,Crafting T1
+Threadspinner Boots,12000,Crafting T2
+Silk,1600,Cloth
+Fine Thread,1097,Threads
+Sous Chef Boots,22997,Crafting T2
+Woodworker Boots,16000,Crafting T2
+Silversmith Boots,9999,Crafting T2
+Tanned Leather,910,Leather

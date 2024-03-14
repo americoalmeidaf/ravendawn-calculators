@@ -20,7 +20,7 @@ def calculate_infusion_cost(initial_grade, final_grade, tier, df):
 
 
 def on_click_save_infusion_data():
-    st.session_state["infusion_data"].to_csv('infusions_price.csv', index=False)
+    st.session_state["infusion_data"].to_csv('./data/infusions_price.csv', index=False)
 
 
 infusion_group_types = {
