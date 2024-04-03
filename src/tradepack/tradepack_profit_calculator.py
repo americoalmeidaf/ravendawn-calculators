@@ -46,9 +46,9 @@ def run_tradepack_profit_calculator_tab():
         st.session_state["tradepacks_demands"] = load_tradepack_demands()
         col1, col2 = st.columns([0.7, 0.3])
         with col1:
-            edited_df = st.data_editor(st.session_state["tradepacks_demands"].loc[tradepacks_available,tradeposts_available])
+            edited_df = st.data_editor(st.session_state["tradepacks_demands"].loc[tradepacks_available,tradeposts_available].sort_index())
             if edited_df is not None:
-                st.session_state["tradepacks_demands"] = edited_df
+                st.session_state["tradepacks_demands"] = edited_df.sort_index()
             st.button("Save Demands", on_click=on_click_save_tradepack_demands, use_container_width=True)
         with col2:
             combined_df = pd.concat(st.session_state["tradepacks_df"])
